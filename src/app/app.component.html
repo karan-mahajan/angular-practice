@@ -1,0 +1,28 @@
+<router-outlet></router-outlet>
+<h1>07</h1>
+<main class="container">
+  <div style="margin-bottom: 10px">
+    <input type="text" [(ngModel)]="country" style="margin-right: 10px" />
+    <button (click)="addCountry()">Add Country</button>
+  </div>
+  <div style="margin-bottom: 10px" *ngIf="editMode">
+    <input type="text" [(ngModel)]="editCountry" style="margin-right: 10px" />
+    <button (click)="countryEdited()">Edit Country</button>
+  </div>
+  <div>{{ i }} Countries</div>
+  <table style="width: 100%" *ngIf="i > 0">
+    <tr>
+      <th style="text-align: left; width: 35px">Name</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let country of countries; let i = index">
+      <td>{{ country.conName }}</td>
+      <td>
+        <button (click)="editCountry1(i)" style="margin-right: 10px">
+          Edit
+        </button>
+        <button (click)="deleteCountry(i)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</main>

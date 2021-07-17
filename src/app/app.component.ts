@@ -41,6 +41,5 @@ export class AppComponent implements OnInit {
   countryEdited() {
     this.countries[this.editVal].conName = this.editCountry;
     this.editMode = false;
-    console.log('EDITED');
   }
 }
